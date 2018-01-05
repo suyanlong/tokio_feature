@@ -4,6 +4,8 @@ version = "0.1.0"
 authors = ["suyanlong <592938410@qq.com>"]
 
 [dependencies]
+hyper = "0.11"
+httparse = "1.2.3"
 # basic dependencies from echo server before
 futures = "0.1"
 tokio-proto = "0.1"
