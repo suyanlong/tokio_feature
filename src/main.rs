@@ -57,6 +57,7 @@ impl Future for WaitInAnotherThread {
                 println!("side thread not running! starting now!");
                 // 终于找到了，这个方法了。这个就是通知的方法呀。
                 // 当前的只有自己，因为reactor是单线程的，正执行到这个方法内部，肯定是自己的token id了！！！！
+                // 拿到当前执行的任务id,发到另一个线程处理，完成后，由另一个线程在发起通知。task.notify()
                 self.run(task::current());
                 self.running = true;
             }
